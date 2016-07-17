@@ -1,0 +1,44 @@
+{{! default}}
+<div class="rt-abouts rt-mobile-content">
+  <div class="rt-about-selection">
+    {{#each abouts}}
+    <div class="rt-about-name rt-big-title" style="cursor: pointer;">{{caplock name }}</div>
+    <div class="rt-about rt-content-overlay hide">
+
+        <div class="rt-content-overlay-back">
+          <span class="rt-content-overlay-back-button"><span class="glyphicon glyphicon-chevron-left"></span>back</span>
+          <h1 style="margin: 6px 0px; text-transform: uppercase" >{{ name }}</h2>
+          <hr class="rt-content-overlay-header-line">
+        </div>
+        
+        {{{ text }}}
+
+      </div>
+      <hr>
+    {{/each}}
+  </div>
+</div>
+
+<!-- Helper script to load abouts -->
+<script>
+
+  setTimeout(function() {
+    /**
+     * load about info on click 
+     * ==================
+     */
+  
+    $( ".rt-about-name" ).each(function() {
+      var that = $(this);
+      that.click( function() {
+        var $overlay = that.nextUntil( ".rt-about-name", ".rt-content-overlay" );
+        $overlay.removeClass( "hide" );
+        $( ".rt-content-overlay-back-button" ).click( function() {
+          $overlay.addClass( "hide" );
+        });
+      });
+    });
+  
+  }, 1000);
+  
+</script>

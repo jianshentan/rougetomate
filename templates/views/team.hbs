@@ -1,0 +1,60 @@
+{{! default }}
+<div class="rt-content rt-team">
+  <!--<span class="rt-content-overlay-back-button"><span class="glyphicon glyphicon-chevron-left"></span>back</span>-->
+  <h1 style="margin:6px 0px;text-transform:uppercase;font-weight:800;">Team</h2>
+  <hr class="rt-content-overlay-header-line">
+  <br>
+  {{#each teams}}
+  <!-- Thumbnail -->
+  <div class="rt-team-cell">
+    <img src="{{ thumbnail.url }}" >
+    <div style="cursor: pointer" class="rt-team-cell-overlay hide">
+      <div class="rt-team-cell-name h3">{{ firstName }}</div>
+    </div>
+  </div>
+  <!-- Expanded Content -->
+  <div class="rt-content-overlay hide">
+    <div class="rt-content-overlay-back">
+      <span class="rt-content-overlay-back-button"><span class="glyphicon glyphicon-chevron-left"></span>back</span>
+      <h1 style="margin: 6px 0px; text-transform: uppercase" >{{ name }}</h2>
+      <hr class="rt-content-overlay-header-line">
+    </div>
+    <br>
+    <div class="rt-team-content">
+      <img src="{{ image.url }}" class="rt-team-image">
+      <div class="h3"><strong>
+        {{ firstName }} {{ lastName }}, {{ position }}
+      </strong></div>
+      <div class="">
+        {{ biography }}
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+<script>
+  $(document).ready(function() {
+    
+    /* hover/click on cells */  
+    $(".rt-team-cell").each(function() {
+      
+      var that = $(this);  
+      that.hover(function() {
+        that.children(".rt-team-cell-overlay").removeClass("hide"); 
+      }, function() {
+        that.children(".rt-team-cell-overlay").addClass("hide"); 
+      });
+      
+      that.click(function() {
+        var overlay = that.nextUntil(".rt-team-cell", ".rt-content-overlay");
+        overlay.removeClass("hide");
+        $( ".rt-content-overlay-back-button" ).click( function() {
+          overlay.addClass( "hide" );
+        });
+      })
+      
+    });
+
+  });
+</script>

@@ -1,0 +1,57 @@
+{{! default}}
+<div class="rt-info rt-content">
+  {{#each info}}
+  <div class="rt-info-item" {{#if @first}}style="margin-top:46px"{{/if}}>
+    {{#if link}}<a href="{{ link }}" target="_blank">{{/if}}
+      <div class="rt-big-title rt-inline">{{caplock name }}</div>
+      {{#if subtitle}}
+      <div class="rt-inline rt-sub-title {{#if showImage }}rt-pointer rt-underline{{/if}}">({{ subtitle }})</div>
+      {{/if}}
+    {{#if link}}</a>{{/if}}
+
+    <div class="rt-info-lines">
+      {{#if line1}}
+      <div class="rt-info-line">{{ line1 }}</div>
+      {{/if}}
+
+      {{#if line2}}
+      <div class="rt-info-line">{{ line2 }}</div>
+      {{/if}}
+
+      {{#if line3}}
+      <div class="rt-info-line">{{ line3 }}</div>
+      {{/if}}
+
+      {{#if line4}}
+      <div class="rt-info-line">{{ line4 }}</div>
+      {{/if}}
+
+      {{#if line5}}
+      <div class="rt-info-line">{{ line5 }}</div>
+      {{/if}}
+
+      {{#if line6}}
+      <div class="rt-info-line">{{ line6 }}</div>
+      {{/if}}
+    </div>
+    
+    {{#if showImage}}
+    <div class="rt-info-overlay">
+
+      <!--
+      <div class="rt-content-overlay-back">
+        &nbsp;&nbsp;
+        <span class="rt-content-overlay-back-button"><span class="glyphicon glyphicon-chevron-left"></span>back</span>
+      </div>
+      -->
+
+      {{#if image }}
+      <img class="rt-info-image" src="{{ image.url }}">
+      {{/if}}
+
+    </div>
+    {{/if}}
+    
+  </div>
+  {{/each}}
+</div>

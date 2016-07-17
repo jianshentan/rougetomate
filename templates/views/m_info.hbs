@@ -1,0 +1,81 @@
+{{! default}}
+<div class="rt-info rt-mobile-content">
+  {{#each info}}
+  <div class="rt-info-item {{#if clickToShowImage }}rt-pointer {{/if}}" overlay-content="{{ clickToShowImage }}">
+    <div class="rt-big-title rt-inline">{{caplock name }}</div>
+
+    {{#if link}}<a href="{{ link }}" target="_blank">{{/if}}
+    {{#if subtitle}}
+    <div class="rt-inline rt-sub-title {{#if showImage}}rt-underline{{/if}}">({{ subtitle }})</div>
+    {{/if}}
+    {{#if link}}</a>{{/if}}
+    
+    {{#if clickToShowImage}}
+    <div class="rt-info-overlay rt-content-overlay hide">
+
+      <div class="rt-content-overlay-back">
+        <span class="rt-content-overlay-back-button"><span class="glyphicon glyphicon-chevron-left"></span>back</span>
+      </div>
+
+      {{#if image }}
+      <img class="rt-fill-width" src="{{ image.url }}">
+      {{/if}}
+
+    </div>
+    {{/if}}
+
+    <div class="rt-info-lines">
+      {{#if line1}}
+      <div class="rt-info-line">{{ line1 }}</div>
+      {{/if}}
+
+      {{#if line2}}
+      <div class="rt-info-line">{{ line2 }}</div>
+      {{/if}}
+
+      {{#if line3}}
+      <div class="rt-info-line">{{ line3 }}</div>
+      {{/if}}
+
+      {{#if line4}}
+      <div class="rt-info-line">{{ line4 }}</div>
+      {{/if}}
+
+      {{#if line5}}
+      <div class="rt-info-line">{{ line5 }}</div>
+      {{/if}}
+
+      {{#if line6}}
+      <div class="rt-info-line">{{ line6 }}</div>
+      {{/if}}
+    </div>
+  </div>
+  
+  {{#if showImage}}
+  <div class="rt-info-overlay">
+    {{#if image }}
+    <img class="rt-info-image" style="width:100%;"src="{{ image.url }}">
+    {{/if}}
+  </div>
+  {{/if}}
+  
+  <hr>
+  {{/each}}
+</div>
+
+<script>
+
+  // wait for jquery to load
+  setTimeout( function() {
+    $( ".rt-info-item[overlay-content*='true']" ).each( function() {
+      $( this ).find( ".rt-sub-title, .rt-big-title" ).click( function() {
+        var $overlay = $( this ).siblings( ".rt-info-overlay" );
+        $overlay.removeClass( "hide" );
+        $overlay.find( ".rt-content-overlay-back-button" ).click( function() {
+          $overlay.addClass( "hide" );
+        });
+      });
+    });
+  }, 1000 );
+
+</script>

@@ -1,0 +1,120 @@
+{{! default}}
+<div class="rt-reservations rt-mobile-content">
+
+  <div class="rt-big-title">PARTY</div>
+  <input type="number" class="rt-reservation-party" value="1" name="party" min="1" max="12"></input>
+  <br><br>
+
+  <div class="rt-big-title">DATE</div>
+  <input type="date" class="rt-reservation-date" name="date"></input>
+  <br><br>
+
+  <div class="rt-big-title">TIME</div>
+  <input type="time" class="rt-reservation-time" name="time" value="08:00"></input>
+  <br><br>
+
+  <div class="rt-submit-reservation">
+    <div class="rt-big-title rt-inline rt-pointer"><em>SEARCH</em></div>
+    <div class="rt-submit-reservation-rhs rt-inline">
+      <div class="rt-reservation-arrows">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </div>
+      <div class="rt-sub-title">(via opentable)</div>
+    </div>
+  </div>
+
+  <br> 
+  <div class="rt-reservation-inquiries">
+    <div class="rt-reservation-inquiries-heading">INQUIRIES?</div>
+    <a href="mailto:chelsea@rougetomate.com">chelsea@rougetomate.com</a>
+  </div>
+
+</div>
+
+<script>
+
+  // Get formatted date YYYY-MM-DD
+  function getFormattedDate(date) {
+    return date.getFullYear()
+      + "-"
+      + ("0" + (date.getMonth() + 1)).slice(-2)
+      + "-"
+      + ("0" + date.getDate()).slice(-2);
+  }
+
+  // formate date to mm/dd/yyyy
+  function formatDate( date ) {
+    return ("0" + (date.getMonth() + 1)).slice(-2)
+      + "/"
+      + ("0" + date.getDate()).slice(-2)
+      + "/"
+      + date.getFullYear();
+  }
+
+  function doubleDigit( num ) {
+    if( num < 9 ) {
+      return "0" + num;
+    } else {
+      return num;
+    }
+  }
+
+  function today() {
+    return new Date();
+  }
+
+  function getDateTime() {
+
+    var reservationTime = $( ".rt-reservation-time" ).val();
+    var hour = parseInt( reservationTime.substring(0, 2) );
+    var minute = parseInt( reservationTime.substring(3, 5) );
+    var DN = "AM";
+
+    // if PM
+    if( hour  > 12 ) {
+      hour = hour - 12;
+      DN = "PM";
+    }
+    var time = doubleDigit(hour) +":"+ doubleDigit(minute) + "%20" + DN;
+
+    var reservationDate =  new Date( $( ".rt-reservation-date" ).val() );
+    var formattedDate = formatDate( reservationDate );
+
+    return formattedDate + "%20" + time;
+
+  }
+
+  // Wait for Jquery to load
+  setTimeout( function() {
+
+    $( ".rt-reservation-date" ).val( getFormattedDate( today() ) );
+
+    // submit to opentable
+    $( ".rt-submit-reservation .rt-big-title" ).click( function() {
+      var reservation = {
+        rid: "1286",
+        party: $( ".rt-reservation-party" ).val(),
+        datetime: getDateTime()
+      }
+
+      /**
+       * MAINTAINENCE: 
+       * this is the request structure to opentable as of 12/01/2015
+       * ===========================================================
+       */
+
+      var req = "http://www.opentable.com/opentables.aspx?" 
+              + "rid=" + reservation.rid + "&"
+              + "restref=" + reservation.rid + "&"
+              + "t=" +  "single" + "&"
+              + "p=" + reservation.party + "&"
+              + "d=" + reservation.datetime;
+
+      window.open( req, '_blank' );
+      window.location.href = "/";
+    });
+
+  }, 1000 );
+
+</script>

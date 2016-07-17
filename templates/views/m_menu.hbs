@@ -1,0 +1,245 @@
+{{! default}}
+<div class="rt-mobile-menus rt-mobile-content">
+
+  <div class="rt-menu-selection">
+    {{#each menus}}
+      <div class="rt-menu-name rt-inline rt-big-title hide" name="{{ name }}" pdf="{{ usePdf }}" {{#if usePdf}}pdf-link="{{ pdf.url}}"{{/if}}>{{caplock name }}</div>
+      <div class="rt-menu rt-content-overlay hide">
+
+        <div class="rt-content-overlay-back">
+          <span class="rt-content-overlay-back-button"><span class="glyphicon glyphicon-chevron-left"></span>back</span>
+        </div>
+
+        {{#if usePdf }}
+        <!-- PREVIEW PDF -->
+        <div class="rt-download-pdf-link" pdf-link="{{ pdf.url}}"><a href="{{ pdf.url }}" download>Download the full PDF</a> </div>
+          {{#each pdfPreview }}
+          <img class="rt-fill-width" src="{{ cloudinaryUrl }}" />
+          {{/each}}
+        {{/if}}
+
+        {{#unless usePdf }}
+
+        {{#if title}}<div class="rt-menu-title">{{ title }}</div>{{/if}}
+        {{#if description}}<div class="rt-menu-description">{{{ description }}}</div>{{/if}}
+
+        
+        {{#if display1}}
+        <!-- SECTION ONE -->
+          <div class="rt-menu-sub">
+          {{#if title1}}<div class="rt-menu-sub-title">{{ title1 }}</div>{{/if}}
+          {{#if description1}}<div class="rt-menu-sub-description">{{ description1 }}</div>{{/if}}
+          {{#if menuitems1}}
+            <div class="rt-menu-items">
+            {{#each menuitems1}}
+              <div class="rt-menu-item" data-menuitem-id="{{this}}"></div>
+            {{/each}}
+            </div>
+          {{/if}}
+          </div>
+        {{/if}}
+
+        {{#if display2}}
+        <!-- SECTION TWO -->
+          <div class="rt-menu-sub">
+          {{#if title2}}<div class="rt-menu-sub-title">{{ title2 }}</div>{{/if}}
+          {{#if description2}}<div class="rt-menu-sub-description">{{ description2 }}</div>{{/if}}
+          {{#if menuitems2}}
+            <div class="rt-menu-items">
+            {{#each menuitems2}}
+              <div class="rt-menu-item" data-menuitem-id="{{this}}"></div>
+            {{/each}}
+            </div>
+          {{/if}}
+          </div>
+        {{/if}}
+
+        {{#if display3}}
+        <!-- SECTION THREE -->
+          <div class="rt-menu-sub">
+          {{#if title3}}<div class="rt-menu-sub-title">{{ title3 }}</div>{{/if}}
+          {{#if description3}}<div class="rt-menu-sub-description">{{ description3 }}</div>{{/if}}
+          {{#if menuitems3}}
+            <div class="rt-menu-items">
+            {{#each menuitems3}}
+              <div class="rt-menu-item" data-menuitem-id="{{this}}"></div>
+            {{/each}}
+            </div>
+          {{/if}}
+          </div>
+        {{/if}}
+
+        {{#if display4}}
+        <!-- SECTION FOUR-->
+          <div class="rt-menu-sub">
+          {{#if title4}}<div class="rt-menu-sub-title">{{ title4 }}</div>{{/if}}
+          {{#if description4}}<div class="rt-menu-sub-description">{{ description4 }}</div>{{/if}}
+          {{#if menuitems4}}
+            <div class="rt-menu-items">
+            {{#each menuitems4}}
+              <div class="rt-menu-item" data-menuitem-id="{{this}}"></div>
+            {{/each}}
+            </div>
+          {{/if}}
+          </div>
+        {{/if}}
+
+        {{#if display5}}
+        <!-- SECTION FIVE -->
+          <div class="rt-menu-sub">
+          {{#if title5}}<div class="rt-menu-sub-title">{{ title5 }}</div>{{/if}}
+          {{#if description5}}<div class="rt-menu-sub-description">{{ description5 }}</div>{{/if}}
+          {{#if menuitems5}}
+            <div class="rt-menu-items">
+            {{#each menuitems5}}
+              <div class="rt-menu-item" data-menuitem-id="{{this}}"></div>
+            {{/each}}
+            </div>
+          {{/if}}
+          </div>
+        {{/if}}
+
+        {{#if display6}}
+        <!-- SECTION SIX -->
+          <div class="rt-menu-sub">
+          {{#if title6}}<div class="rt-menu-sub-title">{{ title6 }}</div>{{/if}}
+          {{#if description6}}<div class="rt-menu-sub-description">{{ description6 }}</div>{{/if}}
+          {{#if menuitems6}}
+            <div class="rt-menu-items">
+            {{#each menuitems6}}
+              <div class="rt-menu-item" data-menuitem-id="{{this}}"></div>
+            {{/each}}
+            </div>
+          {{/if}}
+          </div>
+        {{/if}}
+
+        {{#if display7}}
+        <!-- SECTION SEVEN -->
+          <div class="rt-menu-sub">
+          {{#if title7}}<div class="rt-menu-sub-title">{{ title7 }}</div>{{/if}}
+          {{#if description7}}<div class="rt-menu-sub-description">{{ description7 }}</div>{{/if}}
+          {{#if menuitems7}}
+            <div class="rt-menu-items">
+            {{#each menuitems7}}
+              <div class="rt-menu-item" data-menuitem-id="{{this}}"></div>
+            {{/each}}
+            </div>
+          {{/if}}
+          </div>
+        {{/if}}
+
+        {{#if display8}}
+        <!-- SECTION EIGHT -->
+          <div class="rt-menu-sub">
+          {{#if title8}}<div class="rt-menu-sub-title">{{ title8 }}</div>{{/if}}
+          {{#if description8}}<div class="rt-menu-sub-description">{{ description8 }}</div>{{/if}}
+          {{#if menuitems8}}
+            <div class="rt-menu-items">
+            {{#each menuitems8}}
+              <div class="rt-menu-item" data-menuitem-id="{{this}}"></div>
+            {{/each}}
+            </div>
+          {{/if}}
+          </div>
+        {{/if}}
+
+        {{#if display9}}
+        <!-- SECTION NINE -->
+          <div class="rt-menu-sub">
+          {{#if title9}}<div class="rt-menu-sub-title">{{ title9 }}</div>{{/if}}
+          {{#if description9}}<div class="rt-menu-sub-description">{{ description9 }}</div>{{/if}}
+          {{#if menuitems9}}
+            <div class="rt-menu-items">
+            {{#each menuitems9}}
+              <div class="rt-menu-item" data-menuitem-id="{{this}}"></div>
+            {{/each}}
+            </div>
+          {{/if}}
+          </div>
+        {{/if}}
+
+        <!--
+        {{#repeat 9 }}
+        title: {{ this }}
+        {{/repeat}}
+        -->
+        {{/unless}}
+
+      </div>
+    {{/each}}
+  </div>
+  
+  <div class="rt-menus-about">
+    <div class="">
+      <strong> THE CUISINE </strong> at Rouge Tomate is dedicated to dishes that are nuitritious and sustainable - yet we always consider flavor first.
+    </div>
+    <hr>
+    <div class="">
+      <strong>WE FAVOR</strong> local and seasonal produce; wild caught and responsibly farmed seafood; select meats and poultry from farms that respect both the animals and the environment.
+    </div>
+  </div>
+  
+</div>
+
+<!-- Helper script to load menu -->
+<script>
+  // wait for jquery to load
+  setTimeout( function() {
+
+    /**
+     * Set display on load
+     * ===================
+     */
+
+    // show menu
+    $( ".rt-menu-name" ).removeClass( "hide" );
+
+    // set 'spirits and beer' text to be smaller'
+    var $drinks = $( "[name*='COCKTAIL'], [name*='BEER'], [name*='SPIRITS'], [name*='cocktail'], [name*='beer'], [name*='spirits'], [name*='Cocktail'], [name*='Beer'], [name*='Spirits']" );
+    $drinks.html( "BEVERAGES");
+
+    // set 'open pdf' text if pdf is available
+    var $pdf = $( "[pdf*='true']" );
+    $pdf.each( function() {
+      $( this ).after( 
+        "<div class='rt-pdf-special rt-inline'>" + 
+        "<a href='" + $( this ).attr( "pdf-link" ) + "' download>" + "(open pdf)</a></div>" 
+      );
+    });
+
+    /**
+     * load menu on click 
+     * ==================
+     */
+
+    $( ".rt-menu-name" ).click( function() {
+      var $overlay = $( this ).nextUntil( ".rt-menu-name", ".rt-content-overlay" );
+      $overlay.removeClass( "hide" );
+      $( ".rt-content-overlay-back-button" ).click( function() {
+        $overlay.addClass( "hide" );
+      });
+    });
+
+    /**
+     * load menu items
+     * ===============
+     */
+
+    $( ".rt-menu-item" ).each( function() {
+      var menuitem = $( this );
+      var menuitem_id = $( this ).data( 'menuitem-id' );
+      $.get( 'menu', { menuitem_id: menuitem_id }, function( data ) {
+        menuitem.append( $( "<div class='rt-menu-item-title rt-inline'>" + data[0].name + "</div>" ) );
+        if( data[0].showCost ) {
+          if( data[0].cost ) {
+            menuitem.append( $( "<div class='rt-menu-item-cost rt-inline'>" + "$" + data[0].cost + "</div>" ) );
+          }
+        }
+        menuitem.append( $( "<div class='rt-menu-item-description'>" + data[0].description + "</div>" ) );
+      });
+    });
+
+  }, 1000 ); 
+  
+</script>

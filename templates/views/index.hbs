@@ -1,0 +1,31 @@
+{{! default}}
+<div class="rt-gallery rt-content">
+{{#each galleryimages}}
+  <img class="rt-gallery-image" src="{{ image.url }}"/>
+{{/each}}
+</div>
+<div class="rt-scroll-down">
+  <div class="rt-scroll-down-wrapper">
+    <br>
+    <div class="">Scroll Down</div>
+    <div class=""><span class="glyphicon glyphicon-chevron-down"></span></div>
+    <br>
+  </div>
+</div>
+<script>
+  // on window resize, resize the scrolldown div
+  $(window).resize(function() {
+    $(".rt-scroll-down").width($(window).width() - 300);
+  });
+  
+  // if scrolled to bottom, hide the scrolldown div, otherwise show it
+  $(window).scroll(function() {
+    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+      // scrolled to bottom
+      $(".rt-scroll-down").hide();
+    } else {
+      // not at bottom
+      $(".rt-scroll-down").show();
+    }
+  });
+</script>
