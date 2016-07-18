@@ -26,72 +26,73 @@ Menus.add(
     pdf: { type: Types.CloudinaryImage, label: "Downloadable PDF", dependsOn: { usePdf: true } }
   },
   { heading: 'Menu Intro Section', dependsOn: { usePdf: false } },
+  //"Menu Intro Section",
   {
     title: { type: String },
     description: { type: Types.Html, wysiwyg: true, label: "Description" }
   },
   { heading: 'Section 1', dependsOn: { usePdf: false } },
   {
-    display1: { type: Types.Boolean, label: "Show Section", default: true },
-    title1: { type: Types.Text, label: "Section Title", dependsOn: { display1: true } },
-    description1: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display1: true } },
-    menuitems1: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display1: true } }
+    display1: { type: Types.Boolean, label: "Show Section", default: true, dependsOn: { usePdf: false } },
+    title1: { type: Types.Text, label: "Section Title", dependsOn: { display1: true, usePdf: false } },
+    description1: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display1: true, usePdf: false } },
+    menuitems1: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display1: true, usePdf: false } }
   },
   { heading: 'Section 2', dependsOn: { usePdf: false } },
   {
-    display2: { type: Types.Boolean, label: "Show Section", default: true },
-    title2: { type: Types.Text, label: "Section Title", dependsOn: { display2: true } },
-    description2: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display2: true } },
-    menuitems2: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display2: true } }
+    display2: { type: Types.Boolean, label: "Show Section", default: true, dependsOn: { usePdf: false } },
+    title2: { type: Types.Text, label: "Section Title", dependsOn: { display2: true, usePdf: false } },
+    description2: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display2: true, usePdf: false } },
+    menuitems2: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display2: true, usePdf: false } }
   },
   { heading: 'Section 3', dependsOn: { usePdf: false } },
   {
-    display3: { type: Types.Boolean, label: "Show Section", default: true },
-    title3: { type: Types.Text, label: "Section Title", dependsOn: { display3: true } },
-    description3: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display3: true } },
-    menuitems3: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display3: true } }
+    display3: { type: Types.Boolean, label: "Show Section", default: true, dependsOn: { usePdf: false } },
+    title3: { type: Types.Text, label: "Section Title", dependsOn: { display3: true, usePdf: false } },
+    description3: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display3: true, usePdf: false } },
+    menuitems3: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display3: true, usePdf: false } }
   },
   { heading: 'Section 4', dependsOn: { usePdf: false } },
   {
-    display4: { type: Types.Boolean, label: "Show Section", default: false },
-    title4: { type: Types.Text, label: "Section Title", dependsOn: { display4: true } },
-    description4: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display4: true } },
-    menuitems4: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items",  dependsOn: { display4: true } }
+    display4: { type: Types.Boolean, label: "Show Section", default: false, dependsOn: { usePdf: false } },
+    title4: { type: Types.Text, label: "Section Title", dependsOn: { display4: true, usePdf: false } },
+    description4: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display4: true, usePdf: false } },
+    menuitems4: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items",  dependsOn: { display4: true, usePdf: false } }
   },
   { heading: 'Section 5', dependsOn: { usePdf: false } },
   {
-    display5: { type: Types.Boolean, label: "Show Section", default: false },
-    title5: { type: Types.Text, label: "Section Title", dependsOn: { display5: true } },
-    description5: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display5: true } },
-    menuitems5: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display5: true } }
+    display5: { type: Types.Boolean, label: "Show Section", default: false, dependsOn: { usePdf: false } },
+    title5: { type: Types.Text, label: "Section Title", dependsOn: { display5: true, usePdf: false } },
+    description5: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display5: true, usePdf: false } },
+    menuitems5: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display5: true, usePdf: false } }
   },
   { heading: 'Section 6', dependsOn: { usePdf: false } },
   {
-    display6: { type: Types.Boolean, label: "Show Section", default: false },
-    title6: { type: Types.Text, label: "Section Title", dependsOn: { display6: true } },
-    description6: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display6: true } },
-    menuitems6: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display6: true } }
+    display6: { type: Types.Boolean, label: "Show Section", default: false, dependsOn: { usePdf: false } },
+    title6: { type: Types.Text, label: "Section Title", dependsOn: { display6: true, usePdf: false } },
+    description6: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display6: true, usePdf: false } },
+    menuitems6: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display6: true, usePdf: false } }
   },
   { heading: 'Section 7', dependsOn: { usePdf: false } },
   {
-    display7: { type: Types.Boolean, label: "Show Section", default: false },
-    title7: { type: Types.Text, label: "Section Title", dependsOn: { display7: true } },
-    description7: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display7: true } },
-    menuitems7: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display7: true } }
+    display7: { type: Types.Boolean, label: "Show Section", default: false, dependsOn: { usePdf: false } },
+    title7: { type: Types.Text, label: "Section Title", dependsOn: { display7: true, usePdf: false } },
+    description7: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display7: true, usePdf: false } },
+    menuitems7: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display7: true, usePdf: false } }
   },
   { heading: 'Section 8', dependsOn: { usePdf: false } },
   {
-    display8: { type: Types.Boolean, label: "Show Section", default: false },
-    title8: { type: Types.Text, label: "Section Title", dependsOn: { display8: true } },
-    description8: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display8: true } },
-    menuitems8: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display8: true } }
+    display8: { type: Types.Boolean, label: "Show Section", default: false, dependsOn: { usePdf: false } },
+    title8: { type: Types.Text, label: "Section Title", dependsOn: { display8: true, usePdf: false } },
+    description8: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display8: true, usePdf: false } },
+    menuitems8: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display8: true, usePdf: false } }
   },
   { heading: 'Section 9', dependsOn: { usePdf: false } },
   {
-    display9: { type: Types.Boolean, label: "Show Section", default: false },
-    title9: { type: Types.Text, label: "Section Title", dependsOn: { display9: true } },
-    description9: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display9: true } },
-    menuitems9: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display9: true } }
+    display9: { type: Types.Boolean, label: "Show Section", default: false, dependsOn: { usePdf: false } },
+    title9: { type: Types.Text, label: "Section Title", dependsOn: { display9: true, usePdf: false } },
+    description9: { type: Types.Html, wysiwyg: true, label: "Description", height: 100, dependsOn: { display9: true, usePdf: false } },
+    menuitems9: { type: Types.Relationship, ref: 'Menuitems', many: true, label: "Menu Items", dependsOn: { display9: true, usePdf: false } }
   }
 );
 
