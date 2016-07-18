@@ -36,7 +36,7 @@ keystone.init({
 	'auth': true,
 	'user model': 'User',
 	'cookie secret': 'vmJV_vTF{0@[H,?p=lr16@dzaHcGb_Zd#W/9FQ87ISEfNXnInyP7bt?s&v8VBcpe',
-	'mongo': process.env.MONGO_URL || process.env.APPSETTING_MONGO_URL
+	'mongo': process.env.MONGO_URL
 
 });
 
