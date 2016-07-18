@@ -16,13 +16,19 @@ Menus.add(
   "Menu Info",
   {
     name: { type: String, required: true },
-    title: { type: String },
     publishedDate: { type: Date, default: Date.now },
-    description: { type: Types.Html, wysiwyg: true, label: "Description" },
+    splashImage: { type: Types.CloudinaryImage }
+  }, 
+  "Menu PDF Option",
+  {
     usePdf: { type: Types.Boolean, default: false, label: "Uplaod a pdf instead of the using the sections to populate the menu" },
     pdfPreview: { type: Types.CloudinaryImages, label: "Preview (png/jpg)", dependsOn: { usePdf: true } },
-    pdf: { type: Types.CloudinaryImage, label: "Downloadable PDF", dependsOn: { usePdf: true } },
-    splashImage: { type: Types.CloudinaryImage }
+    pdf: { type: Types.CloudinaryImage, label: "Downloadable PDF", dependsOn: { usePdf: true } }
+  },
+  "Menu Intro Section",
+  {
+    title: { type: String },
+    description: { type: Types.Html, wysiwyg: true, label: "Description" }
   },
   'Section One', {
     display1: { type: Types.Boolean, label: "Show Section", default: true },
