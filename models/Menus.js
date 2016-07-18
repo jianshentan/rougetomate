@@ -21,14 +21,15 @@ Menus.add(
   }, 
   "Menu PDF Option",
   {
-    usePdf: { type: Types.Boolean, default: false, label: "Uplaod a pdf instead of the using the sections to populate the menu" },
+    usePdf: { type: Types.Boolean, default: false, label: "Upload pdf instead of the using the sections to populate the menu" },
     pdfPreview: { type: Types.CloudinaryImages, label: "Preview (png/jpg)", dependsOn: { usePdf: true } },
     pdf: { type: Types.CloudinaryImage, label: "Downloadable PDF", dependsOn: { usePdf: true } }
   },
-  "Menu Intro Section",
+  { heading: 'Menu Intro Section', dependsOn: { usePdf: false } },
+  //"Menu Intro Section",
   {
-    title: { type: String, dependsOn: { usePdf: false }  },
-    description: { type: Types.Html, wysiwyg: true, label: "Description", dependsOn: { usePdf: false } }
+    title: { type: String },
+    description: { type: Types.Html, wysiwyg: true, label: "Description" }
   },
   'Section One', {
     display1: { type: Types.Boolean, label: "Show Section", default: true, dependsOn: { usePdf: false } },
