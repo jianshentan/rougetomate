@@ -153,8 +153,15 @@ hr {
   margin-left: inherit;
 }
 /* RESERVATIONS */
+.rt-reservations input {
+  height: 14vw;
+  font-size: 10vw;
+}
 .rt-submit-reservation {
   font-size: 0.8em;
+}
+.rt-reservation-date {
+  width: 80vw;
 }
 
 .rt-team-cell {

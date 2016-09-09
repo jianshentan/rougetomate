@@ -5,16 +5,19 @@
     <div class="rt-about-name rt-big-title" style="cursor: pointer;">{{caplock name }}</div>
     <div class="rt-about rt-content-overlay hide">
 
-        <div class="rt-content-overlay-back">
-          <span class="rt-content-overlay-back-button"><span class="glyphicon glyphicon-chevron-left"></span>back</span>
-          <h1 style="margin: 6px 0px; text-transform: uppercase" >{{ name }}</h2>
-          <hr class="rt-content-overlay-header-line">
-        </div>
-        
-        {{{ text }}}
-
+      <div class="rt-content-overlay-back">
+        <span class="rt-content-overlay-back-button"><span class="glyphicon glyphicon-chevron-left"></span>back</span>
+        <h1 style="margin: 6px 0px; text-transform: uppercase" >{{ name }}</h2>
+        <!--
+        <hr class="rt-content-overlay-header-line">
+        <br>
+        -->
       </div>
-      <hr>
+      
+      {{{ text }}}
+
+    </div>
+    <hr>
     {{/each}}
   </div>
 </div>

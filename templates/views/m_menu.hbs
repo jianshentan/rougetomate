@@ -170,6 +170,8 @@
     {{/each}}
   </div>
   
+  <br> 
+  
   <div class="rt-menus-about">
     <div class="">
       <strong> THE CUISINE </strong> at Rouge Tomate is dedicated to dishes that are nuitritious and sustainable - yet we always consider flavor first.
@@ -196,7 +198,7 @@
     $( ".rt-menu-name" ).removeClass( "hide" );
 
     // set 'spirits and beer' text to be smaller'
-    var $drinks = $( "[name*='COCKTAIL'], [name*='BEER'], [name*='SPIRITS'], [name*='cocktail'], [name*='beer'], [name*='spirits'], [name*='Cocktail'], [name*='Beer'], [name*='Spirits']" );
+    var $drinks = $( "[name*='COCKTAIL'], [name*='BEER'], [name*='SPIRITS'], [name*='cocktail'], [name*='beer'], [name*='spirits'], [name*='Cocktail'], [name*='Beer'], [name*='Spirits'], [name*='Drinks'], [name*='drinks'] " );
     $drinks.html( "BEVERAGES");
 
     // set 'open pdf' text if pdf is available
@@ -204,7 +206,7 @@
     $pdf.each( function() {
       $( this ).after( 
         "<div class='rt-pdf-special rt-inline'>" + 
-        "<a href='" + $( this ).attr( "pdf-link" ) + "' download>" + "(open pdf)</a></div>" 
+        "<a href='" + $( this ).attr( "pdf-link" ) + "' download>" + "(pdf)</a></div>" 
       );
     });
 

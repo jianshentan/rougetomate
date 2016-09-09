@@ -5246,7 +5246,8 @@ body {
 /* Friends */
 .rt-friends-title:hover {
   background-color: red;
-  padding: 10px;
+  padding-left: 18px;
+  padding-right: 18px;
   color: white; }
 
 .rt-friends {
