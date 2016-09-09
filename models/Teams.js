@@ -16,9 +16,9 @@ Teams.add({
 	firstName: { type: String },
 	lastName: { type: String },
 	thumbnail: { type: Types.CloudinaryImage, label: "Thumbnail Image. NOTE: Uploaded image must be 350X350px"  },
-	image: { type: Types.CloudinaryImage, label: "Main Image. NOTE: Uploaded image must be 1280X600px" },
-	position: { type: String },
-	biography: { type: Types.Textarea }
+	// image: { type: Types.CloudinaryImage, label: "Main Image. NOTE: Uploaded image must be 1280X600px" },
+	position: { type: String, label: "What is this member's role at the company?" },
+	biography: { type: Types.Textarea, label: "Some words to describe this member" }
 });
 
 Teams.register();

@@ -1,6 +1,35 @@
 {{! default}}
-<div class="rt-content">
+<div class="rt-content rt-friends">
+  <div class="rt-friends-splash-image"></div>
   {{#each friends}}
-  <a href="{{ link }}" target="_blank"><div class="rt-big-title rt-inline"{{#if @first}}style="margin-top:28px"{{/if}}>{{caplock name }}</div></a>
+  <div class="rt-friends-splash-image-holder" data-image-url="{{ splashImage.url }}" style="display:none;"></div>
+  <br>
+  <a href="{{ link }}" target="_blank" class="rt-friends-name">
+    <div class="rt-big-title rt-inline rt-friends-title" style="{{#if @first}}margin-top:16px{{/if}}">{{caplock name }}</div>
+  </a>
   {{/each}}
 </div>
+
+
+<!-- Helper script to load menu -->
+<script>
+  
+  /**
+   * load splash image on hover
+   * ==================
+   */
+  $(".rt-friends-splash-image-holder").each(function() {
+    var that = $(this);
+    var imageUrl = $(this).data("image-url");
+    var splash = $(".rt-friends-splash-image");
+    that.nextAll(".rt-friends-name").first().hover(function() {
+      //$(this).addClass('active');
+      //splash.css("background-image", "url('"+imageUrl+"')");
+      splash.css("background-color", "yellow");
+    }, function() {
+      //$(this).removeClass('active');
+      splash.attr("background-image", "");
+    });
+  });
+
+</script>

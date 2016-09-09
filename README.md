@@ -1,6 +1,13 @@
+SETUP
+  It is required that node is on version 0.12.0 for the node-sass library to work
+  1. Use nvm to set node version : nvm use 0.12.0
+  2. Rebuild the node-sass package : npm rebuild node-sass
+  3. update npm : npm install
+  4. run your application : node keystone.js
+
 Launch Application for Dev & Test:
   1. start your mongo database : "mongod"
-  2. start grunt watch: "grunt watch"
+  2. start grunt watch: "grunt watch" // if using local db
   3. run your server: "nodemon keystone"
 
 Dev:

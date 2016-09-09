@@ -13,7 +13,8 @@ var Friends = new keystone.List('Friends', {
 
 Friends.add({
 	name: { type: String, required: true },
-	link: { type: Types.Url }
+	link: { type: Types.Url },
+	splashImage: { type: Types.CloudinaryImage }
 });
 
 Friends.register();

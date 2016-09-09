@@ -11,7 +11,7 @@ body {
   position: relative;
   right: 0px;
   min-width: 576px;
-  margin-left: 315px;
+  margin-left: 365px;
   min-height: 100vh;
 }
 
@@ -24,7 +24,7 @@ body {
 }
 .rt-big-title{
   color: red;
-  font-size: 5.5em;
+  font-size: 4.8em;
   font-family: "proxima_nova_semibold";
   line-height: 1.0em;
 }
@@ -101,7 +101,7 @@ body {
   position: fixed;
   z-index: 500;
   background-color: white;
-  width: 300px;
+  width: 350px;
   padding-right: 15px;
 }
 .rt-logo {
@@ -253,7 +253,6 @@ body {
 /* Info */
 .rt-info-line {
   font-family: "proxima_nova_semibold";
-  color: red;
 }
 .rt-info-lines {
   margin-bottom: 12px;
@@ -337,15 +336,41 @@ body {
   position: absolute;
   left: 0px;
   top: 0px;
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(255,255,255,0.75);
+}
+.rt-team-cell-container {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translatey(-50%) translateX(-50%);
 }
 .rt-team-cell-name {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
   font-weight: 700;
 }
 .rt-team-content,
 .rt-team-image {
   width: 100%;
+}
+
+/* Friends */
+.rt-friends-title:hover {
+  background-color: red;
+  padding: 10px;
+  color: white;
+}
+.rt-friends {
+  position: relative;
+  min-height: 92vh;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+.rt-friends-splash-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -20px;
+  top: 0px;
+  background-size: cover;
+  z-index: -1;
 }

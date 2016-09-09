@@ -5,12 +5,12 @@
     {{#each menus}}
       <div class="rt-menu-splash-image-holder" data-image-url="{{ splashImage.url }}" style="display:none;"></div>
       <br>
-      <div class="rt-menu-name rt-inline rt-big-title hide" name="{{ name }}" pdf="{{ usePdf }}" {{#if usePdf}}pdf-link="{{ pdf.url}}"{{/if}}>{{caplock name }}</div>
+      <div class="rt-menu-name rt-inline rt-big-title hide" style="{{#if @first}}margin-top:16px;{{/if}}"name="{{ name }}" pdf="{{ usePdf }}" {{#if usePdf}}pdf-link="{{ pdf.url}}"{{/if}}>{{caplock name }}</div>
       <div class="rt-menu rt-content-overlay hide">
 
         <div class="rt-content-overlay-back">
           <span class="rt-content-overlay-back-button"><span class="glyphicon glyphicon-chevron-left"></span>back</span>
-          <h1 style="margin: 6px 0px; text-transform: uppercase" >{{ name }}</h2>
+          <h1 style="margin: 6px 0px; text-transform: uppercase; font-size: 4.8em;" >{{ name }}</h2>
           <hr class="rt-content-overlay-header-line">
         </div>
 
@@ -197,7 +197,7 @@
   $( ".rt-menu-name" ).removeClass( "hide" );
 
   // set 'spirits and beer' text to be smaller'
-  var $drinks = $( "[name*='COCKTAIL'], [name*='BEER'], [name*='SPIRITS'], [name*='cocktail'], [name*='beer'], [name*='spirits'], [name*='Cocktail'], [name*='Beer'], [name*='Spirits']" );
+  var $drinks = $( "[name*='COCKTAIL'], [name*='BEER'], [name*='SPIRITS'], [name*='cocktail'], [name*='beer'], [name*='spirits'], [name*='Cocktail'], [name*='Beer'], [name*='Spirits'], [name*='drinks'], [name*='Drinks']" );
   $drinks.html( "COCKTAILS <div class='rt-drinks-special rt-inline'><div>SPIRITS</div><div>AND BEERS</div></div>");
 
   // set 'open pdf' text if pdf is available
@@ -205,7 +205,7 @@
   $pdf.each( function() {
     $( this ).after( 
       "<div class='rt-pdf-special rt-inline'>" + 
-      "<a href='" + $( this ).attr( "pdf-link" ) + "' download>" + "(open pdf)</a></div>" 
+      "<a href='" + $( this ).attr( "pdf-link" ) + "' download>" + "(pdf)</a></div>" 
     );
   });
   
