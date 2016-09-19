@@ -12,7 +12,7 @@
   <br><br>
 
   <div class="rt-big-title">TIME</div>
-  <input type="time" class="rt-reservation-time" name="time" value="08:00"></input>
+  <input type="time" class="rt-reservation-time" name="time" value="20:00" step="1800"></input>
   <br><br>
 
   <div class="rt-submit-reservation">
@@ -46,11 +46,11 @@
 
   // formate date to mm/dd/yyyy
   function formatDate( date ) {
-    return ("0" + (date.getMonth() + 1)).slice(-2)
-      + "/"
-      + ("0" + date.getDate()).slice(-2)
-      + "/"
-      + date.getFullYear();
+    return date.getFullYear()
+      + "-"
+      + ("0" + (date.getMonth())).slice(-2)
+      + "-"
+      + ("0" + (date.getDate() + 1)).slice(-2);
   }
 
   function doubleDigit( num ) {
@@ -70,19 +70,19 @@
     var reservationTime = $( ".rt-reservation-time" ).val();
     var hour = parseInt( reservationTime.substring(0, 2) );
     var minute = parseInt( reservationTime.substring(3, 5) );
-    var DN = "AM";
+    var DN = "am";
 
     // if PM
     if( hour  > 12 ) {
       hour = hour - 12;
-      DN = "PM";
+      DN = "pm";
     }
-    var time = doubleDigit(hour) +":"+ doubleDigit(minute) + "%20" + DN;
+    var time = hour +":"+ doubleDigit(minute) + "+" + DN;
 
     var reservationDate =  new Date( $( ".rt-reservation-date" ).val() );
     var formattedDate = formatDate( reservationDate );
 
-    return formattedDate + "%20" + time;
+    return [formattedDate, time];
 
   }
 
@@ -91,29 +91,29 @@
 
     $( ".rt-reservation-date" ).val( getFormattedDate( today() ) );
 
-    // submit to opentable
+    // submit to reserve.com 
     $( ".rt-submit-reservation .rt-big-title" ).click( function() {
       var reservation = {
-        rid: "1286",
         party: $( ".rt-reservation-party" ).val(),
-        datetime: getDateTime()
+        date: getDateTime()[0],
+        time: getDateTime()[1]
       }
-
+     
       /**
        * MAINTAINENCE: 
-       * this is the request structure to opentable as of 12/01/2015
+       * this is the request structure to reserve.com as of 09/01/2016
        * ===========================================================
        */
 
-      var req = "http://www.opentable.com/opentables.aspx?" 
-              + "rid=" + reservation.rid + "&"
-              + "restref=" + reservation.rid + "&"
-              + "t=" +  "single" + "&"
-              + "p=" + reservation.party + "&"
-              + "d=" + reservation.datetime;
+      var req = "http://widgets.reserve.com/7d242f5e-6663-4885-9ec2-8b43d498cd36/search?" 
+              + "guests=" + reservation.party + "&"
+              + "date=" + reservation.date + "&"
+              + "time=" + reservation.time;
+              
+      console.log(req);
 
-      window.open( req, '_blank' );
-      window.location.href = "/";
+      window.open( req );
+      // window.location.href = "/";
     });
 
   }, 1000 );
