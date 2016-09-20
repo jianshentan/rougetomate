@@ -134,7 +134,7 @@ body {
   position: absolute;
   right: 12px;
   bottom: 24px;
-  color: red;
+  color: #333333;
   font-family: "proxima_nova_regular";
 }
 .rt-subscribe {
@@ -183,6 +183,9 @@ body {
   background-color: red;
   padding-left: 18px;
   padding-right: 18px;
+}
+.rt-menu-name:hover .rt-pdf-special a {
+  color:white;
 }
 .rt-menu-name:hover {
   cursor: pointer;

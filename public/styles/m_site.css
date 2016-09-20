@@ -102,13 +102,16 @@ hr {
   color: white;
   bottom: 10vw;
   font-family: "proxima_nova_light";
-  font-size: 1.2em;
+  font-size: 1.4em;
+  font-weight: 700;
 }
 .rt-email {
   color: white;
 }
 .rt-mobile-subscribe {
-  margin-top: 10vw;
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 5vw;
 }
 .rt-mobile-subscribe .rt-subscribe {
   height: 36px;
@@ -120,7 +123,7 @@ hr {
   border-bottom: 0px;
 }
 .rt-mobile-subscribe .rt-subscribe-submit {
-  margin-top: 6vw;
+  margin-top: 3vw;
   height: 36px;
   line-height: 36px;
   background-color: red;
@@ -154,6 +157,10 @@ hr {
 }
 /* RESERVATIONS */
 .rt-reservations input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
   height: 14vw;
   font-size: 10vw;
 }

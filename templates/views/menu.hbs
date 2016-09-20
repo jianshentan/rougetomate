@@ -200,11 +200,11 @@
   var $drinks = $( "[name*='COCKTAIL'], [name*='BEER'], [name*='SPIRITS'], [name*='cocktail'], [name*='beer'], [name*='spirits'], [name*='Cocktail'], [name*='Beer'], [name*='Spirits'], [name*='drinks'], [name*='Drinks']" );
   $drinks.html( "COCKTAILS <div class='rt-drinks-special rt-inline'><div>SPIRITS</div><div>AND BEERS</div></div>");
 
-  // set 'open pdf' text if pdf is available
+  // set 'pdf' text if pdf is available
   var $pdf = $( "[pdf*='true']" );
   $pdf.each( function() {
-    $( this ).after( 
-      "<div class='rt-pdf-special rt-inline'>" + 
+    $( this ).append( 
+      "<div class='rt-pdf-special rt-inline' style='font-size:16px;line-height:0px;'>" + 
       "<a href='" + $( this ).attr( "pdf-link" ) + "' download>" + "(pdf)</a></div>" 
     );
   });
@@ -221,8 +221,9 @@
       $(this).addClass('active');
       splash.css("background-image", "url('"+imageUrl+"')");
     }, function() {
+      console.log("removed");
       $(this).removeClass('active');
-      splash.attr("background-image", "");
+      splash.css("background-image", "");
     });
   });
 
