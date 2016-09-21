@@ -27,6 +27,7 @@ body {
   font-size: 4.8em;
   font-family: "proxima_nova_semibold";
   line-height: 1.0em;
+  margin-right: 15px;
 }
 .rt-sub-title {
   color: red;
@@ -172,7 +173,7 @@ body {
 
 /* Menu */
 .rt-menus-about {
-  width: 33%;
+  width: 100%;
   color: red;
 }
 .rt-menu-selection {
@@ -220,6 +221,7 @@ body {
   min-height: 92vh;
   margin-top: 18px;
   margin-bottom: 18px;
+  width: 70vw;
 }
 .rt-menu-splash-image {
   position: absolute;
@@ -347,6 +349,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translatey(-50%) translateX(-50%);
+  width: 70%;
 }
 .rt-team-cell-name {
   font-weight: 700;

@@ -1,6 +1,6 @@
 {{! default}}
 <div class="rt-content rt-friends">
-  <div class="rt-friends-splash-image"></div>
+  <div class="rt-friends-splash-image" style="padding-right:15px;"></div>
   {{#each friends}}
   <div class="rt-friends-splash-image-holder" data-image-url="{{ splashImage.url }}" style="display:none;"></div>
   <br>
@@ -27,7 +27,7 @@
       splash.css("background-image", "url('"+imageUrl+"')");
     }, function() {
       //$(this).removeClass('active');
-      splash.attr("background-image", "");
+      splash.css("background-image", "");
     });
   });
 

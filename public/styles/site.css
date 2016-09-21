@@ -4929,7 +4929,8 @@ body {
   color: red;
   font-size: 4.8em;
   font-family: "proxima_nova_semibold";
-  line-height: 1em; }
+  line-height: 1em;
+  margin-right: 15px; }
 
 .rt-sub-title {
   color: red;
@@ -5068,7 +5069,7 @@ body {
 
 /* Menu */
 .rt-menus-about {
-  width: 33%;
+  width: 100%;
   color: red; }
 
 .rt-menu-selection {
@@ -5115,7 +5116,8 @@ body {
   position: relative;
   min-height: 92vh;
   margin-top: 18px;
-  margin-bottom: 18px; }
+  margin-bottom: 18px;
+  width: 70vw; }
 
 .rt-menu-splash-image {
   position: absolute;
