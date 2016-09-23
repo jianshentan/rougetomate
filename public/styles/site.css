@@ -5240,7 +5240,8 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translatey(-50%) translateX(-50%); }
+  transform: translatey(-50%) translateX(-50%);
+  width: 70%; }
 
 .rt-team-cell-name {
   font-weight: 700; }
