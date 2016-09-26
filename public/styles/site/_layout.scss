@@ -381,3 +381,22 @@ body {
   background-size: cover;
   z-index: -1;
 }
+
+/* mailchimp */
+#mce-EMAIL {
+  width: 100px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+#mc-embedded-subscribe {
+  border:none;
+  background-color:#fff;
+  font-weight:800;
+  color:red;
+}
+#mc-embedded-subscribe:focus{
+  outline: none;
+}
+*:focus {
+  outline: none;
+}

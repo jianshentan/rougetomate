@@ -181,3 +181,10 @@ hr {
 .rt-team-cell img {
   position: relative;
 }
+
+/* mailchimp */
+#mce-EMAIL {
+  width: 80vw;
+  border: none;
+  border-bottom: inherit;
+}
