@@ -101,7 +101,7 @@ keystone.set('nav', {
 	'menus/menuitems': ['menus', 'menuitems'],
 	'gallery': ['galleryimages', 'mobilegalleryimages'],
 	'team/friends': ['teams', 'friends'],
-	'info/about/certs': ['infos', 'abouts', 'certifications'],
+	'info/about/certs/shares': ['infos', 'abouts', 'certifications', 'shares'],
 	'users': 'users'
 });
 

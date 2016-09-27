@@ -57,6 +57,18 @@ exports.certificates = function(req, res, next) {
 };
 
 /**
+	Fetches meta (share data) to render on each page
+*/
+exports.shares = function(req, res, next) {
+	var locals = res.locals;
+	keystone.list('Shares').model.find().sort('sortOrder')
+	.exec(function(err, list) {
+		locals.shares = list;
+		next();
+  });
+};
+
+/**
 	Fetches and clears the flashMessages before a view is rendered
 */
 
