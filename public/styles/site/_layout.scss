@@ -25,14 +25,14 @@ body {
 .rt-big-title{
   color: red;
   font-size: 4.8em;
-  font-family: "proxima_nova_semibold";
+  font-family: "proxima_nova_semibold", Helvetica, Arial, sans-serif;
   line-height: 1.0em;
   margin-right: 15px;
 }
 .rt-sub-title {
   color: red;
   font-size: 1.4em;
-  font-family: "proxima_nova_light";
+  font-family: "proxima_nova_light", Helvetica, Arial, sans-serif;
   margin-left: 8px;
 }
 .rt-content {
@@ -49,7 +49,7 @@ body {
   padding-right: 15px;
 }
 .rt-content-overlay-back {
-  font-family: "proxima_nova_semibold";
+  font-family: "proxima_nova_semibold", Helvetica, Arial, sans-serif;
   width: 100%;
   line-height: 24px;
   color: red;
@@ -136,7 +136,7 @@ body {
   right: 12px;
   bottom: 24px;
   color: #333333;
-  font-family: "proxima_nova_regular";
+  font-family: "proxima_nova_regular", Helvetica, Arial, sans-serif;
 }
 .rt-subscribe {
   border: 0px;
@@ -203,7 +203,7 @@ body {
 }
 .rt-pdf-special {
   margin-left: 8px;
-  font-family: "proxima_nova_light";
+  font-family: "proxima_nova_light", Helvetica, Arial, sans-serif;
   font-size: 1.4em;
 }
 .rt-pdf-special a {
@@ -235,29 +235,29 @@ body {
 .rt-menu-title {
   color: red;
   font-size: 2.0em;
-  font-family: "proxima_nova_semibold";
+  font-family: "proxima_nova_semibold", Helvetica, Arial, sans-serif;
 }
 .rt-menu-sub-title {
   color: red;
   font-size: 1.8em;
-  font-family: "proxima_nova_semibold";
+  font-family: "proxima_nova_semibold", Helvetica, Arial, sans-serif;
   margin-top: 18px;
 }
 .rt-menu-item {
   margin-bottom: 12px;
 }
 .rt-menu-item-title {
-  font-family: "proxima_nova_semibold";
+  font-family: "proxima_nova_semibold", Helvetica, Arial, sans-serif;
 }
 .rt-menu-item-description {
-  font-family: "proxima_nova_light";
+  font-family: "proxima_nova_light", Helvetica, Arial, sans-serif;
 }
 .rt-menu-item-cost {
   margin-left: 12px;
 }
 /* Info */
 .rt-info-line {
-  font-family: "proxima_nova_semibold";
+  font-family: "proxima_nova_semibold", Helvetica, Arial, sans-serif;
 }
 .rt-info-lines {
   margin-bottom: 12px;
@@ -270,7 +270,7 @@ body {
 /* Reservation */
 .rt-reservations input {
   border: 0px solid red;
-  font-family: "proxima_nova_light";
+  font-family: "proxima_nova_light", Helvetica, Arial, sans-serif;
   padding-left: 12px;
   height: 46px;
   font-size: 36px;
@@ -282,7 +282,7 @@ body {
   outline: none;
 }
 .rt-reservation-arrows {
-  font-family: "proxima_nova_semibold";
+  font-family: "proxima_nova_semibold", Helvetica, Arial, sans-serif;
   font-size: 1.8em;
   color: red;
   margin-left: 4px;
@@ -295,7 +295,7 @@ body {
 }
 .rt-reservation-inquiries {}
 .rt-reservation-inquiries-heading {
-  font-family: "proxima_nova_semibold";
+  font-family: "proxima_nova_semibold", Helvetica, Arial, sans-serif;
   font-size: 1.8em;
   color: red;
 }
@@ -322,7 +322,7 @@ body {
   color: red;
 }
 .rt-team h1 {
-  font-family: "proxima_nova_semibold";
+  font-family: "proxima_nova_semibold", Helvetica, Arial, sans-serif;
 }
 .rt-team-cell {
   display: inline-block;
@@ -348,7 +348,7 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translatey(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
   width: 70%;
 }
 .rt-team-cell-name {
