@@ -195,9 +195,10 @@
 
     // set 'spirits and beer' text to be smaller'
     var $drinks = $( "[name*='COCKTAIL'], [name*='BEER'], [name*='SPIRITS'], [name*='cocktail'], [name*='beer'], [name*='spirits'], [name*='Cocktail'], [name*='Beer'], [name*='Spirits'], [name*='Drinks'], [name*='drinks'] " );
-    $drinks.html( "BEVERAGES");
+    $drinks.html("BEVERAGES");
 
     // set 'open pdf' text if pdf is available
+    /*
     var $pdf = $( "[pdf*='true']" );
     $pdf.each( function() {
       $( this ).after( 
@@ -205,6 +206,7 @@
         "<a href='" + $( this ).attr( "pdf-link" ) + "' download>" + "(pdf)</a></div>" 
       );
     });
+    */
 
     /**
      * load menu on click 
