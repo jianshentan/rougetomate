@@ -245,7 +245,8 @@
     var menuitem = $( this );
     var menuitem_id = $( this ).data( 'menuitem-id' );
     $.get( 'menu', { menuitem_id: menuitem_id }, function( data ) {
-      menuitem.append( $( "<div class='rt-menu-item-title rt-inline'>" + data[0].name + "</div>" ) );
+      var displayText = data[0].displayName == null ? data[0].name : data[0].displayName;
+      menuitem.append( $( "<div class='rt-menu-item-title rt-inline'>" + displayText+ "</div>" ) );
       if( data[0].showCost ) {
         if( data[0].cost ) {
           menuitem.append( $( "<div class='rt-menu-item-cost rt-inline'>" + "$" + data[0].cost + "</div>" ) );

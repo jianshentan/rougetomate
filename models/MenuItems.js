@@ -16,6 +16,7 @@ var MenuItems = new keystone.List('Menuitems', {
 
 MenuItems.add({
 	name: { type: String, required: true },
+	displayName: { type: String },
   showCost: { type: Types.Boolean, default: true },
   cost: { type: Types.Money, format: '$0,0.00', dependsOn: { showCost: true } },
   description: { type: Types.Text }
