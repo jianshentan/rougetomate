@@ -169,6 +169,15 @@ hr {
 .rt-reservation-date {
   width: 80vw;
 }
+.rt-reservation-special {
+  font-family: "proxima_nova_semibold", Helvetica, Arial, sans-serif;
+}
+.rt-reservation-special-button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 5px;
+}
 
 .rt-team-cell {
   width: 90vw;
@@ -186,4 +195,9 @@ hr {
   width: 80vw;
   border: none;
   border-bottom: inherit;
+}
+
+/* notification */
+.rt-notification {
+  padding: 10px;  
 }

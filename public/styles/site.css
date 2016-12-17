@@ -5203,12 +5203,6 @@ body {
 .rt-reservation-inquiries a {
   font-size: 1.8em; }
 
-.rt-reservation-notification {
-  padding: 10px 20px;
-  border: 2px solid red;
-  background-color: red;
-  color: white; }
-
 .rt-reservation-special {
   padding: 20px;
   border: 2px solid red;
@@ -5310,6 +5304,14 @@ body {
 
 *:focus {
   outline: none; }
+
+/* notification */
+.rt-notification {
+  padding: 10px 20px;
+  border: 2px solid red;
+  background-color: red;
+  color: white;
+  display: inline-block; }
 
 @font-face {
   font-family: 'proxima_nova_light';
