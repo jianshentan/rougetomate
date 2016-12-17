@@ -29,6 +29,13 @@ body {
   line-height: 1.0em;
   margin-right: 15px;
 }
+.rt-small-title{
+  color: red;
+  font-size: 1.8em;
+  font-family: "proxima_nova_semibold", Helvetica, Arial, sans-serif;
+  line-height: 1.0em;
+  margin-right: 15px;
+}
 .rt-sub-title {
   color: red;
   font-size: 1.4em;
@@ -301,6 +308,21 @@ body {
 }
 .rt-reservation-inquiries a {
   font-size: 1.8em;
+}
+.rt-reservation-notification {
+  padding: 10px 20px;
+  border: 2px solid red;
+  background-color: red;
+  color: white;
+}
+.rt-reservation-special {
+  padding: 20px;
+  border: 2px solid red;
+  max-width: 560px;
+  font-family: "proxima_nova_semibold", Helvetica, Arial, sans-serif;
+}
+.rt-reservation-special a div {
+  cursor: pointer; 
 }
 
 /* Certifications */

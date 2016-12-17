@@ -100,7 +100,7 @@ hr {
   margin-left: 10vw;
   color: white;
   bottom: 10vw;
-  font-family: "proxima_nova_light";
+  font-family: "proxima_nova_light", Helvetica, Arial, sans-serif;
   font-size: 1.4em;
   font-weight: 700;
 }
@@ -118,7 +118,7 @@ hr {
   width: 80vw;
   color: #555;
   text-align: center;
-  font-family: "proxima_nova_light";
+  font-family: "proxima_nova_light", Helvetica, Arial, sans-serif;
   border-bottom: 0px;
 }
 .rt-mobile-subscribe .rt-subscribe-submit {
@@ -128,7 +128,7 @@ hr {
   background-color: red;
   width: 80vw;
   color: white;
-  font-family: "proxima_nova_light";
+  font-family: "proxima_nova_light", Helvetica, Arial, sans-serif;
 }
 /* MENU */
 .rt-menus-about {
