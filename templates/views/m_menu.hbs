@@ -1,6 +1,11 @@
 {{! default}}
 <div class="rt-mobile-menus rt-mobile-content">
-
+  
+  <div class="rt-notification">
+    Please note that Rouge Tomate will having a <strong>Valentine's Special</strong>! Please see more on our <a href="/reservations" style="color:white;text-decoration:underline;">reservations</a> page.
+  </div>
+  <br>
+  
   <div class="rt-menu-selection">
     {{#each menus}}
       <div class="rt-menu-name rt-inline rt-big-title hide" name="{{ name }}" pdf="{{ usePdf }}" {{#if usePdf}}pdf-link="{{ pdf.url}}"{{/if}}>{{caplock name }}</div>
