@@ -7,3 +7,4 @@ dump.rdb
 *.log
 *.env
 *.editorconfig
+.github_token
