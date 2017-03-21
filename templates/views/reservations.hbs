@@ -1,4 +1,5 @@
 {{! default}}
+<script src="https://widgets.resy.com/embed.js"></script>
 <div class="rt-reservations rt-content">
   
   <!--
@@ -20,9 +21,11 @@
   <input type="date" class="rt-reservation-date" name="date"></input>
   <br><br>
 
+  <!--
   <div class="rt-big-title">TIME</div>
   <input type="time" class="rt-reservation-time" name="time" value="20:00" step="1800"></input>
   <br><br>
+  -->
 
   <div class="rt-submit-reservation">
     <div class="rt-big-title rt-inline rt-pointer"><em>SEARCH</em></div>
@@ -79,15 +82,6 @@
       + ("0" + date.getDate()).slice(-2);
   }
 
-  // formate date to mm/dd/yyyy
-  function formatDate( date ) {
-    return date.getFullYear()
-      + "-"
-      + ("0" + (date.getMonth() + 1)).slice(-2)
-      + "-"
-      + ("0" + (date.getDate() + 1)).slice(-2);
-  }
-
   function doubleDigit( num ) {
     if( num < 9 ) {
       return "0" + num;
@@ -100,6 +94,7 @@
     return new Date();
   }
 
+  /*
   function getDateTime() {
 
     var reservationTime = $( ".rt-reservation-time" ).val();
@@ -120,10 +115,22 @@
     var time = hour +":"+ doubleDigit(minute) + "+" + DN;
 
     var reservationDate =  new Date( $( ".rt-reservation-date" ).val() );
-    var formattedDate = formatDate( reservationDate );
+    var formattedDate = getFormattedDate( reservationDate );
 
     return [formattedDate, time];
 
+  }
+  */
+  
+  function getDate() {
+    var reservationDate =  new Date( $( ".rt-reservation-date" ).val() );
+    var formattedDate = reservationDate.getFullYear()
+      + "-"
+      + ("0" + (reservationDate.getMonth() + 1)).slice(-2)
+      + "-"
+      + ("0" + (reservationDate.getDate() + 1)).slice(-2);
+
+    return formattedDate;
   }
 
   // Wait for Jquery to load
@@ -135,25 +142,26 @@
     $( ".rt-submit-reservation .rt-big-title" ).click( function() {
       var reservation = {
         party: $( ".rt-reservation-party" ).val(),
-        date: getDateTime()[0],
-        time: getDateTime()[1]
+        date: getDate()
+        /*time: getDateTime()[1] */
       }
      
       /**
        * MAINTAINENCE: 
-       * this is the request structure to reserve.com as of 09/01/2016
+       * this is the request structure to resy as of 2017/03/21
        * ===========================================================
        */
+       
+      var config = {
+        venueId: "1049",
+        apiKey: "4aqVHdy1FsihfVpPSbrGrHSh4l521GVZ",
+        date: reservation.date,
+        seats: reservation.party,
+        replace: true
+      };
+      
+      resyWidget.openModal(config);
 
-      var req = "http://widgets.reserve.com/7d242f5e-6663-4885-9ec2-8b43d498cd36/search?" 
-              + "guests=" + reservation.party + "&"
-              + "date=" + reservation.date + "&"
-              + "time=" + reservation.time;
-              
-      console.log(req);
-
-      window.open( req );
-      // window.location.href = "/";
     });
 
   }, 1000 );
