@@ -23,7 +23,18 @@
 
 	</head>
 	<body class="">
-
+		{{!--
+			//- jQuery 1.11.1 is included by default, and required by both Bootstrap
+			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
+			//- you can upgrade to 2.1.3 (also bundled) for better performance.
+		--}}
+		<script src="/js/jquery/jquery-1.11.2.min.js"></script>
+		{{!--
+			//- Customise which Bootstrap javascript files are served by including
+			//- them specifically here, instead of bootstrap-3.3.4.min.js
+		--}}
+		<script src="/js/bootstrap/bootstrap-3.3.4.min.js"></script>
+		
     <!-- Navigation -->
 		<div class="rt-mobile-nav">
 
@@ -40,10 +51,40 @@
       <div class="rt-mobile-nav-options rt-center">
 
         <ul class="rt-mobile-nav-elements">
-            {{# each navLinks}}
-            <li {{#ifeq ../section key}}class="active "{{/ifeq}}>
-              <a href="{{ href }}" class="rt-mobile-nav-element {{key}}">{{caplock label }}</a>
-            </li>
+          {{# each navLinks}}
+            {{#ifeq key "reservations"}}
+    	        <li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
+    	          <span id="rt-resy-button" class="rt-mobile-nav-element {{key}}">{{caplock label }}</span>
+    	        </li>
+    	        <script src="https://widgets.resy.com/embed.js"></script>
+    	        <script>
+          			document.getElementById("rt-resy-button").onclick = function() {
+          			  var config = {
+                    venueId: "1049",
+                    apiKey: "4aqVHdy1FsihfVpPSbrGrHSh4l521GVZ",
+            	    };
+            			resyWidget.openModal(config)
+            			
+            			/*
+            			var bgHeight = $("#backdrop").height() - $(window).height();
+            			$(window).scroll(function(e) {   
+                    if($(window).scrollTop() >= bgHeight) {
+                      $(window).scrollTop(bgHeight);
+                    }
+                  });
+                  $("#backdrop").resize(function() {
+                    console.log("resizing");
+            			  bgHeight = $("#backdrop").height() - $(window).height();
+                  });
+                  */
+                  
+          			}
+    	        </script>
+            {{else}}
+              <li {{#ifeq ../section key}}class="active "{{/ifeq}}>
+                <a href="{{ href }}" class="rt-mobile-nav-element {{key}}">{{caplock label }}</a>
+              </li>
+            {{/ifeq}}
           {{/each}}
         </ul>
 
@@ -63,17 +104,6 @@
 
 	  {{{body}}}
 
-		{{!--
-			//- jQuery 1.11.1 is included by default, and required by both Bootstrap
-			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
-			//- you can upgrade to 2.1.3 (also bundled) for better performance.
-		--}}
-		<script src="/js/jquery/jquery-1.11.2.min.js"></script>
-		{{!--
-			//- Customise which Bootstrap javascript files are served by including
-			//- them specifically here, instead of bootstrap-3.3.4.min.js
-		--}}
-		<script src="/js/bootstrap/bootstrap-3.3.4.min.js"></script>
 		{{{isAdminEditorJS user}}}
 
     <script>
@@ -81,16 +111,16 @@
       $( ".rt-nav-elements" ).find( "."+path ).addClass( "rt-underline" );
 
       // open
-      $( ".rt-mobile-nav-button" ).click( function() {
-
+      $( ".rt-mobile-nav-button" ).click(navToggle);
+      
+      function navToggle(){
         // change icon
-        $( this ).find( ".rt-opened" ).toggle();
-        $( this ).find( ".rt-closed" ).toggle();
+        $( ".rt-mobile-nav-button" ).find( ".rt-opened" ).toggle();
+        $( ".rt-mobile-nav-button" ).find( ".rt-closed" ).toggle();
 
         // show nav
         $( ".rt-mobile-nav-options" ).toggle();
-
-      });
+      };
 
     </script>
 	</body>

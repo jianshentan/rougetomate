@@ -10,7 +10,7 @@ body {
   min-width: 100vw;
 }
 .rt-mobile-content {
-  margin-top: 24vw;
+  padding-top: 24vw !important;
   padding: 3vw;
 }
 .rt-big-title {
@@ -88,7 +88,7 @@ hr {
   width: 100vw;
   height: 100vh;
   position: relative;
-  overflow: none;
+  overflow: scroll;
 }
 .rt-mobile-gallery-image {
   width: 100%;

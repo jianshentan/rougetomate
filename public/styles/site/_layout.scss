@@ -138,6 +138,12 @@ body {
 .rt-nav-elements li a {
   color: red;
 }
+.rt-nav-elements li span {
+  color: red;
+}
+.rt-nav-elements li span:hover {
+  cursor: pointer;
+}
 .rt-nav-info {
   position: absolute;
   right: 12px;

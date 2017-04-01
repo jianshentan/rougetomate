@@ -89,9 +89,25 @@
       <!-- Navigation -->
       <ul class="rt-nav-elements navbar-right">
         {{# each navLinks}}
-        <li {{#ifeq ../section key}}class="active rt-align-right"{{else}}{{/ifeq}} class="rt-align-right">
-          <a href="{{ href }}" class="rt-nav-element {{key}}">{{caplock label }}</a>
-        </li>
+	        {{#ifeq key "reservations"}}
+	        <li {{#ifeq ../section key}}class="active rt-align-right"{{else}}{{/ifeq}} class="rt-align-right">
+	          <span id="rt-resy-button" class="rt-nav-element {{key}}">{{caplock label }}</span>
+	        </li>
+	        <script src="https://widgets.resy.com/embed.js"></script>
+	        <script>
+			      $('#rt-resy-button').click(function(){
+						  var config = {
+			          venueId: "1049",
+			          apiKey: "4aqVHdy1FsihfVpPSbrGrHSh4l521GVZ",
+			  	    };
+			  			resyWidget.openModal(config)
+						});
+	        </script>
+	        {{else}}
+	        <li {{#ifeq ../section key}}class="active rt-align-right"{{else}}{{/ifeq}} class="rt-align-right">
+	          <a href="{{ href }}" class="rt-nav-element {{key}}">{{caplock label }}</a>
+	        </li>
+	        {{/ifeq}}
       	{{/each}}
       </ul>
 
