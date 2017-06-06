@@ -52,39 +52,9 @@
 
         <ul class="rt-mobile-nav-elements">
           {{# each navLinks}}
-            {{#ifeq key "reservations"}}
-    	        <li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
-    	          <span id="rt-resy-button" class="rt-mobile-nav-element {{key}}">{{caplock label }}</span>
-    	        </li>
-    	        <script src="https://widgets.resy.com/embed.js"></script>
-    	        <script>
-          			document.getElementById("rt-resy-button").onclick = function() {
-          			  var config = {
-                    venueId: "1049",
-                    apiKey: "4aqVHdy1FsihfVpPSbrGrHSh4l521GVZ",
-            	    };
-            			resyWidget.openModal(config)
-            			
-            			/*
-            			var bgHeight = $("#backdrop").height() - $(window).height();
-            			$(window).scroll(function(e) {   
-                    if($(window).scrollTop() >= bgHeight) {
-                      $(window).scrollTop(bgHeight);
-                    }
-                  });
-                  $("#backdrop").resize(function() {
-                    console.log("resizing");
-            			  bgHeight = $("#backdrop").height() - $(window).height();
-                  });
-                  */
-                  
-          			}
-    	        </script>
-            {{else}}
-              <li {{#ifeq ../section key}}class="active "{{/ifeq}}>
-                <a href="{{ href }}" class="rt-mobile-nav-element {{key}}">{{caplock label }}</a>
-              </li>
-            {{/ifeq}}
+            <li {{#ifeq ../section key}}class="active "{{/ifeq}}>
+              <a href="{{ href }}" class="rt-mobile-nav-element {{key}}">{{caplock label }}</a>
+            </li>
           {{/each}}
         </ul>
 
