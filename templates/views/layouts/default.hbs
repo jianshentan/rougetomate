@@ -89,9 +89,9 @@
       <!-- Navigation -->
       <ul class="rt-nav-elements navbar-right">
         {{# each navLinks}}
-	        <li {{#ifeq ../section key}}class="active rt-align-right"{{else}}{{/ifeq}} class="rt-align-right">
-	          <a href="{{ href }}" class="rt-nav-element {{key}}">{{caplock label }}</a>
-	        </li>
+        <li {{#ifeq ../section key}}class="active rt-align-right"{{else}}{{/ifeq}} class="rt-align-right">
+          <a href="{{ href }}" class="rt-nav-element {{key}}">{{caplock label }}</a>
+        </li>
       	{{/each}}
       </ul>
 
