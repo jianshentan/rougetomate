@@ -33,6 +33,7 @@ exports.initLocals = function(req, res, next) {
 		{ label: 'Menus',		key: 'menu',		href: '/menu' },
     { label: 'Info',    key: 'info',    href: '/info' },
     { label: 'Reservations', key:'reservations', href: 'http://www.opentable.com/single.aspx?rid=731248&restref=731248' },
+    { label: 'Events',   key: 'events',   href: '/events' },
     { label: 'About',   key: 'about',   href: '/about' },
     { label: 'Team',    key: 'team',    href: '/team' },
     { label: 'Friends', key: 'friends', href: '/friends' }
