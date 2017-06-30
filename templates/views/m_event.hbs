@@ -1,16 +1,14 @@
 {{! default}}
 <div class="rt-events rt-mobile-content">
   <div class="rt-event-selection">
-    {{#each events}}
-    <div class="rt-event-name rt-big-title" style="cursor: pointer;">{{caplock name}}</div>
+    <div class="rt-event-name rt-big-title" style="cursor: pointer;">{{caplock event.name}}</div>
     <div class="rt-event rt-content-overlay">
       <div class="rt-content-overlay-back">
         <a href="/events/"><span class="rt-content-overlay-back-button"><span class="glyphicon glyphicon-chevron-left"></span>back</span></a>
-        <h1 style="margin: 6px 0px; text-transform: uppercase">{{ name }}</h2>
+        <h1 style="margin: 6px 0px; text-transform: uppercase">{{ event.name }}</h2>
       </div>
-      {{{ text }}}
+      {{{ event.text }}}
     </div>
     <hr>
-    {{/each}}
   </div>
 </div>
