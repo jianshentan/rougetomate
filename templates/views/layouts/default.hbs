@@ -89,8 +89,8 @@
       <!-- Navigation -->
       <ul class="rt-nav-elements navbar-right">
         {{# each navLinks}}
-        <li {{#ifeq ../section key}}class="active rt-align-right"{{else}}{{/ifeq}} class="rt-align-right">
-          <a href="{{ href }}" class="rt-nav-element {{key}}">{{caplock label }}</a>
+        <li class="rt-align-right">
+          <a href="{{ href }}" class="rt-nav-element {{#ifeq ../section key}}rt-underline{{/ifeq}}">{{caplock label}}</a>
         </li>
       	{{/each}}
       </ul>
@@ -99,11 +99,11 @@
       <div class="rt-nav-info rt-align-right">
   
         <!-- social media icons -->
-        <div class="" style="padding-top:10px;padding-bottom:10px;">
-        	<a href="https://www.twitter.com/rougetomatenyc" target="_blank"><img src="images/twitter-icon.png" width="30"></a>&nbsp;
-        	<a href="https://www.facebook.com/rougetomatechelsea" target="_blank"><img src="images/fb-icon.png" width="30"></a>&nbsp;
-        	<a href="https://www.instagram.com/rougetomatechelsea" target="_blank"><img src="images/ig-icon.png" width="30"></a>
-        </div>
+				<div class="" style="padding-top:10px;padding-bottom:10px;">
+					<a href="https://www.twitter.com/rougetomatenyc" target="_blank"><img src="/images/twitter-icon.png" width="30"></a>&nbsp;
+					<a href="https://www.facebook.com/rougetomatechelsea" target="_blank"><img src="/images/fb-icon.png" width="30"></a>&nbsp;
+					<a href="https://www.instagram.com/rougetomatechelsea" target="_blank"><img src="/images/ig-icon.png" width="30"></a>
+				</div>
      	
         <div class="rt-address">126 W 18th St, New York, NY 10011</div>
         <a href="mailto:chelsea@rougetomate.com"><div class="rt-email">chelsea@rougetomate.com</div></a>
@@ -168,9 +168,5 @@
 
 		{{{isAdminEditorJS user}}}
 
-    <script>
-      var path = window.location.pathname.substr(1);
-      $( ".rt-nav-elements" ).find( "."+path ).addClass( "rt-underline" );
-    </script>
 	</body>
 </html>
