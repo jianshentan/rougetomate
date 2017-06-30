@@ -7,23 +7,16 @@ exports = module.exports = function(req, res) {
 
   // locals.section is used to set the currently selected
   // item in the header navigation.
-  locals.section = 'Team';
+  locals.section = 'team';
 
+  // Load the items by sortOrder
+  view.query('teams', keystone.list('Teams').model.find().sort('sortOrder'));
 
   // Render the view
-  if (req.isMobile) {
-
-    // Load the galleries by sortOrder
-    view.query('teams', keystone.list('Teams').model.find().sort('sortOrder'));
+  if ( req.isMobile ) {
     view.render('m_team', { layout: 'mobile' } );
-  }
-  else {
-
-    // Load the galleries by sortOrder
-    view.query('teams', keystone.list('Teams').model.find().sort('sortOrder'));
-
+  } else {
     view.render('team');
   }
-
 
 };

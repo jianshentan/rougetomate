@@ -1,7 +1,7 @@
 var keystone = require('keystone');
 
 exports = module.exports = function(req, res) {
-	
+
   // if request is sent with a menuitem_id param
   if( req.query.menuitem_id ) {
 
@@ -14,17 +14,18 @@ exports = module.exports = function(req, res) {
 
   } else {
 
-      var view = new keystone.View(req, res);
-      var locals = res.locals;
-      
-      // locals.section is used to set the currently selected
-      // item in the header navigation.
-      locals.section = 'Menus';
-      
-      // Load the menus by sortOrder
-      view.query('menus', keystone.list('Menus').model.find().sort('sortOrder'));
+    var view = new keystone.View(req, res);
+    var locals = res.locals;
 
-    if( req.isMobile ) {
+    // locals.section is used to set the currently selected
+    // item in the header navigation.
+    locals.section = 'menu';
+
+    // Load the menus by sortOrder
+    view.query('menus', keystone.list('Menus').model.find().sort('sortOrder'));
+
+    // Render the view
+    if ( req.isMobile ) {
       view.render('m_menu', { layout: 'mobile' } );
     } else {
       view.render('menu');
