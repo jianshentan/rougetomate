@@ -9,14 +9,15 @@ exports = module.exports = function(req, res) {
   // item in the header navigation.
   locals.section = 'events';
 
-  // Load the items by sortOrder
-  view.query('events', keystone.list('Events').model.find().sort('sortOrder'));
+  // Lookup the selected item by key
+  view.query('events', keystone.list('Events').model.find({ key: req.params.key }).sort('sortOrder'));
 
   // Render the view
   if ( req.isMobile ) {
-    view.render('m_events', { layout: "mobile" });
+    view.render('m_event', { layout: "mobile" });
   } else {
-    view.render('events');
+    view.render('event');
   }
+
 
 };

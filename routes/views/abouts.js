@@ -7,16 +7,16 @@ exports = module.exports = function(req, res) {
 
   // locals.section is used to set the currently selected
   // item in the header navigation.
-  locals.section = 'events';
+  locals.section = 'about';
 
   // Load the items by sortOrder
-  view.query('events', keystone.list('Events').model.find().sort('sortOrder'));
+  view.query('abouts', keystone.list('Abouts').model.find().sort('sortOrder'));
 
   // Render the view
   if ( req.isMobile ) {
-    view.render('m_events', { layout: "mobile" });
+    view.render('m_abouts', { layout: "mobile" });
   } else {
-    view.render('events');
+    view.render('abouts');
   }
 
 };

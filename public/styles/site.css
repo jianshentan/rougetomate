@@ -4932,6 +4932,11 @@ body {
   line-height: 1em;
   margin-right: 15px; }
 
+.rt-big-title > a, .rt-big-title a:hover {
+  line-height: 1em;
+  color: red;
+  text-decoration: none; }
+
 .rt-small-title {
   color: red;
   font-size: 1.8em;
@@ -4965,6 +4970,11 @@ body {
   color: red;
   margin-bottom: 12px;
   display: inline-block; }
+
+.rt-content-overlay-back a, .rt-content-overlay-back a:hover {
+  font-family: "proxima_nova_semibold", Helvetica, Arial, sans-serif;
+  color: red;
+  text-decoration: none; }
 
 .rt-content-overlay {
   position: absolute;

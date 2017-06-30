@@ -7,21 +7,15 @@ exports = module.exports = function(req, res) {
 
   // locals.section is used to set the currently selected
   // item in the header navigation.
-  locals.section = 'About';
+  locals.section = 'about';
+
+  // Lookup the selected item by key
+  view.query('abouts', keystone.list('Abouts').model.find({ key: req.params.key }).sort('sortOrder'));
 
   // Render the view
-  if (req.isMobile) {
-
-    // Load the galleries by sortOrder
-    view.query('abouts', keystone.list('Abouts').model.find().sort('sortOrder'));
-    
-    view.render('m_about', { layout: "mobile"});
-  }
-  else {
-
-    // Load the galleries by sortOrder
-    view.query('abouts', keystone.list('Abouts').model.find().sort('sortOrder'));
-
+  if ( req.isMobile ) {
+    view.render('m_about', { layout: "mobile" });
+  } else {
     view.render('about');
   }
 
