@@ -1,16 +1,14 @@
 {{! default}}
 <div class="rt-abouts rt-content">
   <div class="rt-about-selection" style="padding-top:34px;">
-    {{#each abouts}}
-    <div class="rt-about-name rt-big-title" style="cursor: pointer;">{{caplock name}}</div>
+    <div class="rt-about-name rt-big-title" style="cursor: pointer;">{{caplock about.name}}</div>
     <div class="rt-about rt-content-overlay">
       <div class="rt-content-overlay-back">
         <a href="/about/"><span class="rt-content-overlay-back-button"><span class="glyphicon glyphicon-chevron-left"></span>back</span></a>
-        <h1 style="margin: 6px 0px; text-transform: uppercase; font-size:4.8em;" >{{ name }}</h2>
+        <h1 style="margin: 6px 0px; text-transform: uppercase; font-size:4.8em;" >{{ about.name }}</h2>
         <hr class="rt-content-overlay-header-line">
       </div>
-      {{{ text }}}
+      {{{ about.text }}}
     </div>
-    {{/each}}
   </div>
 </div>

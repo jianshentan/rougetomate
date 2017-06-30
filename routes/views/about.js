@@ -10,7 +10,7 @@ exports = module.exports = function(req, res) {
   locals.section = 'about';
 
   // Lookup the selected item by key
-  view.query('abouts', keystone.list('Abouts').model.find({ key: req.params.key }).sort('sortOrder'));
+  view.query('about', keystone.list('Abouts').model.findOne({ key: req.params.key }));
 
   // Render the view
   if ( req.isMobile ) {
