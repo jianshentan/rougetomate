@@ -1,10 +1,23 @@
 {{! default}}
+<!-- banner -->
+{{#if banners}}
+<div class="rt-banners rt-resize">
+  {{#each banners}}
+  {{#if text}}
+  <div class="rt-banner">
+    {{{ text }}}
+  </div>
+  {{/if}}
+  {{/each}}
+</div>
+{{/if}}
 <div class="rt-gallery rt-content">
+<!-- gallery -->
 {{#each galleryimages}}
   <img class="rt-gallery-image" src="{{ image.url }}"/>
 {{/each}}
 </div>
-<div class="rt-scroll-down">
+<div class="rt-scroll-down rt-resize">
   <div class="rt-scroll-down-wrapper">
     <br>
     <div class="">Scroll Down</div>
@@ -13,12 +26,30 @@
   </div>
 </div>
 <script>
-  // on window resize, resize the scrolldown div
-  $(".rt-scroll-down").width($(window).width() - 300);
-  $(window).resize(function() {
+  var resize_scrolldown = function() {
     $(".rt-scroll-down").width($(window).width() - 300);
+  }
+
+  var resize_banner = function() {
+    var w = $(window).width() - 555;
+    if (w >= 200) {
+      $(".rt-banners").show();
+      $(".rt-banners").width(w);
+    } else {
+      $(".rt-banners").hide();
+    }
+  }
+
+  // on initializaion, resize the scrolldown div and banners
+  resize_scrolldown();
+  resize_banner();
+
+  // on window resize, resize the scrolldown div and banners
+  $(window).resize(function() {
+    resize_scrolldown();
+    resize_banner();
   });
-  
+
   // if scrolled to bottom, hide the scrolldown div, otherwise show it
   $(window).scroll(function() {
     if($(window).scrollTop() + $(window).height() == $(document).height()) {

@@ -99,7 +99,7 @@ keystone.set('email tests', require('./routes/emails'));
 
 keystone.set('nav', {
 	'menus/menuitems': ['menus', 'menuitems'],
-	'gallery': ['galleryimages', 'mobilegalleryimages'],
+	'gallery': ['galleryimages', 'mobilegalleryimages', 'banners'],
 	'team/friends': ['teams', 'friends'],
 	'info/events/about/certs/shares': ['infos', 'events', 'abouts', 'certifications', 'shares'],
 	'users': 'users'

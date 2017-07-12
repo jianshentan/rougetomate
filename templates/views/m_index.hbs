@@ -5,6 +5,19 @@
 {{/each}}
 </div>
 
+<!-- banner -->
+{{#if banners}}
+<div class="rt-banners-mobile rt-resize">
+  {{#each banners}}
+  {{#if text}}
+  <div class="rt-banner-mobile">
+    {{{ text }}}
+  </div>
+  {{/if}}
+  {{/each}}
+</div>
+{{/if}}
+
 <div class="rt-main-info rt-center">
 
   <div class="rt-address rt-shadow">126 W 18th St,<br>New York, NY 10011</div>
@@ -24,3 +37,15 @@
   </div>
 
 </div>
+<script>
+  // on window resize, hide/display the banners
+  $(window).resize(function() {
+    if($(window).width() > $(window).height()) {
+      // hide in landscape
+      $(".rt-banners-mobile").hide();
+    } else {
+      // show in portrait
+      $(".rt-banners-mobile").show();
+    }
+  });
+</script>

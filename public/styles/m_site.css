@@ -130,6 +130,24 @@ hr {
   color: white;
   font-family: "proxima_nova_light", Helvetica, Arial, sans-serif;
 }
+
+/* BANNER */
+.rt-banners-mobile {
+  position: fixed;
+  top: 21%;
+  left: 10%;
+  right: 10%;
+  z-index: 100;
+  background-color: rgba(255,255,255,0.75);
+}
+  
+.rt-banner-mobile {
+  padding: 20px;
+  font-size: 3vh;
+  font-weight: bold;
+	text-shadow: 0px 0px 2px #555;
+}
+
 /* MENU */
 .rt-menus-about {
   width: 83vw;

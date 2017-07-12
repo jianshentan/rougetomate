@@ -349,6 +349,29 @@ body {
   margin: 10px;
 }
 
+/* Banners */
+.rt-banners {
+  position: fixed;
+  left: 387px;
+  top: 40px;
+  z-index: 100;
+  border: 1px solid red;
+  background-color: white;
+}
+
+.rt-banner {
+  margin: 15px 20px 15px 20px;
+  font-size: 1.6em;
+}
+
+.rt-banner img {
+  margin: 10px;
+}
+
+.rt-banner a, .rt-banner a:hover, .rt-banner a:visited {
+  color: red;
+}
+
 /* Teams */
 .rt-team {
   color: red;

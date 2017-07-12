@@ -9,6 +9,16 @@ exports = module.exports = function(req, res) {
   // item in the header navigation.
   locals.section = '';
 
+  // Load the banner contents
+  view.query('banners', keystone.list('Banners').model.find({
+    displayStartDate: {
+      $lte: Date.now()
+    } ,
+    displayEndDate: {
+      $gt: Date.now()
+    }
+  }).sort('sortOrder'));
+
   // Render the view
   if ( req.isMobile ) {
     // Load the galleries by sortOrder
