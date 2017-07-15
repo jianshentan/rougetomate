@@ -41,7 +41,10 @@ exports = module.exports = function(app) {
 	app.get('/gallery', routes.views.gallery);
 	app.get('/info', middleware.checkMobile, routes.views.info);
 	app.get('/reservations', middleware.checkMobile, routes.views.reservations);
-	app.get('/about', middleware.checkMobile, routes.views.about);
+	app.get('/events', middleware.checkMobile, routes.views.events);
+	app.get('/events/:key?', middleware.checkMobile, routes.views.event);
+	app.get('/about', middleware.checkMobile, routes.views.abouts);
+	app.get('/about/:key', middleware.checkMobile, routes.views.about);
 	app.get('/team', middleware.checkMobile, routes.views.team);
 	app.get('/friends', middleware.checkMobile, routes.views.friends);
 	app.get('/', middleware.checkMobile, routes.views.index);

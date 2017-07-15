@@ -52,8 +52,8 @@
 
         <ul class="rt-mobile-nav-elements">
           {{# each navLinks}}
-            <li {{#ifeq ../section key}}class="active "{{/ifeq}}>
-              <a href="{{ href }}" class="rt-mobile-nav-element {{key}}">{{caplock label }}</a>
+            <li>
+              <a href="{{ href }}" class="rt-mobile-nav-element {{#ifeq ../section key}}rt-underline{{/ifeq}}">{{caplock label }}</a>
             </li>
           {{/each}}
         </ul>
@@ -77,9 +77,6 @@
 		{{{isAdminEditorJS user}}}
 
     <script>
-      var path = window.location.pathname.substr(1);
-      $( ".rt-nav-elements" ).find( "."+path ).addClass( "rt-underline" );
-
       // open
       $( ".rt-mobile-nav-button" ).click(navToggle);
       
