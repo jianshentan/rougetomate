@@ -88,9 +88,9 @@
 
       <!-- Navigation -->
       <ul class="rt-nav-elements navbar-right">
-        {{# each navLinks}}
+        {{# each navMenuItems}}
         <li class="rt-align-right">
-          <a href="{{ href }}" class="rt-nav-element {{#ifeq ../section key}}rt-underline{{/ifeq}}">{{caplock label}}</a>
+          <a href="{{ link }}" class="rt-nav-element {{#ifeq ../navMenuItemKey key}}rt-underline{{/ifeq}}">{{ caplock name }}</a>
         </li>
       	{{/each}}
       </ul>

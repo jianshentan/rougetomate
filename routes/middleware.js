@@ -24,21 +24,6 @@ exports.initLocals = function(req, res, next) {
 
   var locals = res.locals;
 
-  /**
-   * Navigation Links
-   *   'key' needs to match the view-set locals.section variable
-   * ===========================================================
-   */
-  locals.navLinks = [
-    { label: 'Reservations', key: 'reservations', href: 'http://www.opentable.com/single.aspx?rid=731248&restref=731248' },
-    { label: 'Events',       key: 'events',       href: '/events' },
-    { label: 'Menus',        key: 'menu',         href: '/menu' },
-    { label: 'Info',         key: 'info',         href: '/info' },
-    { label: 'About',        key: 'about',        href: '/about' },
-    { label: 'Team',         key: 'team',         href: '/team' },
-    // { label: 'Friends', key: 'friends', href: '/friends' }
-  ];
-
   locals.user = req.user;
 
   next();
@@ -65,6 +50,20 @@ exports.shares = function(req, res, next) {
   keystone.list('Shares').model.find().sort('sortOrder')
   .exec(function(err, list) {
     locals.shares = list;
+    next();
+  });
+};
+
+/**
+  Fetches navigation menu items to render on each page
+*/
+exports.navMenuItems = function(req, res, next) {
+  var locals = res.locals;
+  keystone.list('Navmenuitems').model.find().sort('sortOrder')
+  .exec(function(err, list) {
+    console.log("locals.navMenuItems", list)
+    console.log(list)
+    locals.navMenuItems = list;
     next();
   });
 };

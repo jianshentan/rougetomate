@@ -17,9 +17,9 @@ exports = module.exports = function(req, res) {
     var view = new keystone.View(req, res);
     var locals = res.locals;
 
-    // locals.section is used to set the currently selected
+    // locals.navMenuItemKey is used to set the currently selected
     // item in the header navigation.
-    locals.section = 'menu';
+    locals.navMenuItemKey = 'menus';
 
     // Load the menus by sortOrder
     view.query('menus', keystone.list('Menus').model.find().sort('sortOrder'));

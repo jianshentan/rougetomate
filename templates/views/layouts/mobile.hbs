@@ -51,9 +51,9 @@
       <div class="rt-mobile-nav-options rt-center">
 
         <ul class="rt-mobile-nav-elements">
-          {{# each navLinks}}
+          {{# each navMenuItems}}
             <li>
-              <a href="{{ href }}" class="rt-mobile-nav-element {{#ifeq ../section key}}rt-underline{{/ifeq}}">{{caplock label }}</a>
+              <a href="{{ link }}" class="rt-mobile-nav-element {{#ifeq ../navMenuItemKey key}}rt-underline{{/ifeq}}">{{ caplock name }}</a>
             </li>
           {{/each}}
         </ul>
