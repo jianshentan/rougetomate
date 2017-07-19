@@ -17,8 +17,8 @@ Banners.add({
   name: { type: String, required: true },
   images: { type: Types.CloudinaryImages, label: "Add these images here to use below." },
   text: { type: Types.Html, wysiwyg: true, label: "HTML Text (To add an image, add images above, save and then copy the link of the image in the html text below.)" },
-  displayStartDate: { type: Date, label: "Display Starts" },
-  displayEndDate: { type: Date, label: "Display Ends" },
+  displayStartDate: { type: Types.Datetime, label: "Display Starts" },
+  displayEndDate: { type: Types.Datetime, label: "Display Ends" },
 });
 
 Banners.defaultColumns = 'name, displayStartDate, displayEndDate';
