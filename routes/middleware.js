@@ -61,9 +61,21 @@ exports.navMenuItems = function(req, res, next) {
   var locals = res.locals;
   keystone.list('Navmenuitems').model.find().sort('sortOrder')
   .exec(function(err, list) {
-    console.log("locals.navMenuItems", list)
-    console.log(list)
     locals.navMenuItems = list;
+    next();
+  });
+};
+
+/**
+  Fetches navigation snippets to render on each page
+*/
+exports.navSnippets = function(req, res, next) {
+  var locals = res.locals;
+  keystone.list('Snippets').model.find({ scope: "nav" }).sort('sortOrder')
+  .exec(function(err, list) {
+    _.each(list, function(item){
+      locals[item['key']] = item;
+    });
     next();
   });
 };
