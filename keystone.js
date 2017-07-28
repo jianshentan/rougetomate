@@ -6,6 +6,14 @@ require('dotenv').load();
 var keystone = require('keystone');
 var handlebars = require('express-handlebars');
 
+// fallback timezone setting
+// it's preferred to set environment variable values externally (via
+// dotenv/procfile, etc.)
+// setting here is an (unreliable) fallback
+if ( ! process.env.TZ ) {
+	process.env.TZ = 'America/New_York';
+}
+
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
@@ -98,6 +106,7 @@ keystone.set('email tests', require('./routes/emails'));
 // Configure the navigation bar in Keystone's Admin UI
 
 keystone.set('nav', {
+	'navigation': ['navmenuitems','snippets'],
 	'menus/menuitems': ['menus', 'menuitems'],
 	'gallery': ['galleryimages', 'mobilegalleryimages', 'banners'],
 	'team/friends': ['teams', 'friends'],

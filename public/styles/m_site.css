@@ -83,6 +83,11 @@ hr {
   font-size: 3vh;
 }
 
+/* Navigation Snippets */
+.rt-nav-mobile-link, .rt-nav-mobile-link a {
+  color: white;
+}
+
 /* GALLERY */
 .rt-mobile-gallery {
   width: 100vw;

@@ -88,32 +88,16 @@
 
       <!-- Navigation -->
       <ul class="rt-nav-elements navbar-right">
-        {{# each navLinks}}
+        {{# each navMenuItems}}
         <li class="rt-align-right">
-          <a href="{{ href }}" class="rt-nav-element {{#ifeq ../section key}}rt-underline{{/ifeq}}">{{caplock label}}</a>
+          <a href="{{ link }}" class="rt-nav-element {{#ifeq ../navMenuItemKey key}}rt-underline{{/ifeq}}">{{ caplock name }}</a>
         </li>
       	{{/each}}
       </ul>
 
       <!-- More Info -->
       <div class="rt-nav-info rt-align-right">
-  
-        <!-- social media icons -->
-				<div class="" style="padding-top:10px;padding-bottom:10px;">
-					<a href="https://www.twitter.com/rougetomatenyc" target="_blank"><img src="/images/twitter-icon.png" width="30"></a>&nbsp;
-					<a href="https://www.facebook.com/rougetomatechelsea" target="_blank"><img src="/images/fb-icon.png" width="30"></a>&nbsp;
-					<a href="https://www.instagram.com/rougetomatechelsea" target="_blank"><img src="/images/ig-icon.png" width="30"></a>
-				</div>
-     	
-        <div class="rt-address">126 W 18th St, New York, NY 10011</div>
-        <a href="mailto:chelsea@rougetomate.com"><div class="rt-email">chelsea@rougetomate.com</div></a>
-        <div class="rt-phone">(646)-395-3978</div>
-        
-        <!-- link to Fishbowl subscription -->
-        <div style="margin-top: 10px">
-          <a style="text-transform: uppercase; color:red;" href="http://rougetomatechelsea.fbmta.com/members/UpdateProfile.aspx?Action=Subscribe">Subscribe to newsletter ></a>
-        </div>
-       
+        {{#if navdefault}}{{{ navdefault.text }}}{{/if}}
       </div>
 		</div>
 		

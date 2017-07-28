@@ -25,6 +25,8 @@ var importRoutes = keystone.importer(__dirname);
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('routes', middleware.certificates);
+keystone.pre('routes', middleware.navMenuItems);
+keystone.pre('routes', middleware.navSnippets);
 keystone.pre('routes', middleware.shares); 
 keystone.pre('render', middleware.flashMessages);
 
