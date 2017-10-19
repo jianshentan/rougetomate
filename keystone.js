@@ -110,7 +110,7 @@ keystone.set('nav', {
 	'menus/menuitems': ['menus', 'menuitems'],
 	'gallery': ['galleryimages', 'mobilegalleryimages', 'banners'],
 	'team/friends': ['teams', 'friends'],
-	'info/events/about/certs/shares': ['infos', 'events', 'abouts', 'certifications', 'shares'],
+	'info/events/about/certs/shares/tags': ['infos', 'events', 'abouts', 'certifications', 'shares', 'metatags'],
 	'users': 'users'
 });
 

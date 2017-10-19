@@ -356,6 +356,9 @@ module.exports = function() {
 		return new hbs.SafeString(output);
 	};
 
+	_helpers.stringNotEmpty = function (str) {
+		return (str.toString().trim() != '');
+	};
 	
 	return _helpers;
 };

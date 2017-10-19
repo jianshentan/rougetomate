@@ -55,6 +55,18 @@ exports.shares = function(req, res, next) {
 };
 
 /**
+  Fetches meta-tags to render on each page
+*/
+exports.meta_tags = function(req, res, next) {
+  var locals = res.locals;
+  keystone.list('Metatags').model.find().sort('sortOrder')
+  .exec(function(err, list) {
+    locals.meta_tags = list; 
+    next();
+  });
+};
+
+/**
   Fetches navigation menu items to render on each page
 */
 exports.navMenuItems = function(req, res, next) {
