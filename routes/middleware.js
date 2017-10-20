@@ -59,7 +59,7 @@ exports.shares = function(req, res, next) {
 */
 exports.meta_tags = function(req, res, next) {
   var locals = res.locals;
-  keystone.list('Metatags').model.find().sort('sortOrder')
+  keystone.list('Metatags').model.find({ is_hidden: { $in: [null, false] } }).sort('sortOrder')
   .exec(function(err, list) {
     locals.meta_tags = list; 
     next();

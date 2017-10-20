@@ -1,9 +1,9 @@
 {{#each meta_tags}}
 {{#if image.url}}
-<meta name="{{name}}" content="{{image.url}}" />
+<meta name="{{tag_name}}" content="{{image.url}}" />
 {{else}}
 {{#if content}}
-<meta name="{{name}}" content="{{content}}" />
+<meta name="{{tag_name}}" content="{{content}}" />
 {{/if}}
 {{/if}}
 {{/each}}
